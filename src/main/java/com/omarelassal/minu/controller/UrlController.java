@@ -13,6 +13,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/minu")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UrlController {
 
     @Autowired

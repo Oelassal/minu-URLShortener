@@ -1,0 +1,110 @@
+.minu {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(245, 245, 245);
+
+  /* css variables */
+  --minu-theme-color: rgb(13, 110, 253);
+  --minu-theme-color-rgb: 13, 110, 253;
+  --minu-form-card-bg: #31dda1;
+  --minu-box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
+  --minu-text: #0000;
+
+  background-color: var(--bs-body-bg);
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+@media (min-width: 992px) {
+  .minu {
+    padding: 80px 0;
+  }
+}
+
+/* Gray Block Style */
+.gray .minu,
+.minu.gray {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(246, 246, 246);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .minu,
+.minu.dark-gray {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(30, 39, 53);
+}
+
+/* Dark Block Style */
+.dark .minu,
+.minu.dark {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(11, 23, 39);
+}
+
+.minu-heading {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 25px;
+  color: var(--bs-body-color);
+}
+
+@media (min-width: 768px) {
+  .minu-heading {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+
+.minu-sub-heading {
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--bs-body-color);
+}
+
+.minu-form-card {
+  background-color: var(--minu-theme-color);
+  border-radius: 10px;
+  margin-top: -60vh;
+  box-shadow: var(--minu-box-shadow);
+  -webkit-box-shadow:var(--minu-box-shadow);
+  -moz-box-shadow: var(--minu-box-shadow);
+}
+
+.minu-btn {
+  padding: 12px 30px;
+  min-width: 110px;
+  height: 48px;
+}
+.floating {
+
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }
+}
+
+.lightning{
+  width: 2vw;
+}
+.bi-clipboard::before {
+  content: "\f290";
+}
+.btn-clipboard {
+  z-index: 10;
+  display: block;
+  padding: .5em .75em .625em;
+  line-height: 1;
+  color: black;
+  background-color: var(--bs-tertiary-bg);
+  border: 0;
+  border-radius: .25rem;
+}

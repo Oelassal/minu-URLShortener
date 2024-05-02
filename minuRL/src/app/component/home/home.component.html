@@ -1,0 +1,41 @@
+<section class="minu">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-5 text-center ">
+        <video src="https://videos.pexels.com/video-files/8064146/8064146-uhd_1440_1800_30fps.mp4" autoplay muted loop class="img-fluid rounded-4" type="video/mp4" ></video>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-6">
+        <div class="minu-form-card p-md-5 p-4 floating">
+          <h2 class="minu-heading mb-4">Minu.rl</h2>
+          <p class="text-light">Shorten URLs lightning fast. ⚡</p>
+
+          <div class="input-group mb-3">
+            <input type="text" [(ngModel)]="originalURL" class="form-control text-dark" placeholder="Enter your URL here" aria-label="Enter URL here" aria-describedby="button-addon2">
+            <button type="submit" (click)="shorten()" class="btn btn-dark minu-btn">Shorten</button>
+          </div>
+
+
+          <div [class]="'toast' + (isShortUrlRcvd ? ' show ' : '')" id="minu-toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <img src="assets/lightning.png" class="rounded lightning" alt="..." (click)="copyUrl()">
+              <strong class="me-auto">URL is here!</strong>
+              <small>copy to clipboard</small>
+              <button type="button" class="btn-clipboard" data-bs-dismiss="toast" aria-label="Copy">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+            <div class="toast-body">
+              {{shortUrl}}
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
