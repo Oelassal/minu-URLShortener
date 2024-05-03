@@ -40,16 +40,15 @@ public class UrlController {
     @GetMapping("/{shortUrl}")
     public RedirectView redirect(@PathVariable("shortUrl") String shortUrl) {
         String originalURL = urlShortenService.getOriginalUrl(shortUrl);
-
         if (originalURL.equals("Original Url Doesn't Exist")) {
             return new RedirectView("/errorPage"); // Redirect to a custom error page
         }
         boolean isSchemeSubDomainValid = URLValidator.isSchemeSubdomain(originalURL);
 
-        if(isSchemeSubDomainValid){
-        return(new RedirectView(originalURL));
-        }
-        return new RedirectView("https://www."+originalURL);
+        if(isSchemeSubDomainValid)
+            return new RedirectView(originalURL);
+
+        return new RedirectView("https://"+originalURL);
 
     }
 

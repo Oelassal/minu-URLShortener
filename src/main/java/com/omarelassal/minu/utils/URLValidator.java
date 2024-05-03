@@ -2,6 +2,8 @@ package com.omarelassal.minu.utils;
 
 import lombok.experimental.UtilityClass;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.regex.Pattern;
 
 @UtilityClass
@@ -20,6 +22,17 @@ public class URLValidator {
 
 //    Check for Scheme and subdomain in the original url
     public static boolean isSchemeSubdomain(String originalUrl) {
-        return originalUrl.startsWith("http://www") || originalUrl.startsWith("https://") || originalUrl.startsWith("https://www.") || originalUrl.startsWith("http://www.");
+        try {
+
+
+                URL url = new URL(originalUrl);
+                String protocol = url.getProtocol();
+                String host = url.getHost();
+
+                return protocol != null && !protocol.isEmpty() && host != null && !host.isEmpty();
+
+        } catch (MalformedURLException e) {
+            return false; // Invalid URL format
+        }
     }
 }
