@@ -7,9 +7,12 @@
 A url shortener service created in spring boot 3 & Angular 17.
 
 
+
 ## Demo
 
-(https://jmp.sh/s/5oMqBr9M6Dgf5v708I4A)
+[![Watch the video](https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/01/url-shortener.jpg)](https://youtu.be/yO0q7JM-2Tc)
+
+
 
 
 ## Features
