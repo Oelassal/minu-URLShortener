@@ -9,7 +9,7 @@ A url shortener service created in spring boot 3 & Angular 17.
 
 ## Demo
 
-[![IMAGE ALT TEXT HERE](minURL.gif)
+(minURL.gif)
 
 
 ## Features
