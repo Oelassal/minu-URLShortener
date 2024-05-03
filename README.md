@@ -1,5 +1,5 @@
 
-![Logo](minuRL/src/assets/Minurl_logo.png)
+<img src="minuRL/src/assets/Minurl_logo.png" width="200" height="200"/>
 
 
 # MINU.RL 
@@ -7,9 +7,12 @@
 A url shortener service created in spring boot 3 & Angular 17.
 
 
+
 ## Demo
 
-[![IMAGE ALT TEXT HERE](minuRL/src/assets/Minurl_logo.png)](https://www.youtu.be/yO0q7JM-2Tc)
+[![Watch the video](https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/01/url-shortener.jpg)](https://youtu.be/yO0q7JM-2Tc)
+
+
 
 
 ## Features
