@@ -23,14 +23,13 @@ public class URLValidator {
 //    Check for Scheme and subdomain in the original url
     public static boolean isSchemeSubdomain(String originalUrl) {
         try {
-                if(originalUrl.contains("www.")) {
+
                     URL url = new URL(originalUrl);
                     String protocol = url.getProtocol();
                     String host = url.getHost();
 
                     return protocol != null && !protocol.isEmpty() && host != null && !host.isEmpty();
-                }
-                return true;
+            
         } catch (MalformedURLException e) {
             return false; // Invalid URL format
         }

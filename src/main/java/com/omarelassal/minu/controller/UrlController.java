@@ -43,13 +43,23 @@ public class UrlController {
         if (originalURL.equals("Original Url Doesn't Exist")) {
             return new RedirectView("/errorPage"); // Redirect to a custom error page
         }
-        boolean isSchemeSubDomainValid = URLValidator.isSchemeSubdomain(originalURL);
 
-        if(isSchemeSubDomainValid)
-            return new RedirectView(originalURL);
+        // Check if the scheme and subdomain are valid, and add them if missing
+        if (!URLValidator.isSchemeSubdomain(originalURL)) {
+            String updatedURL = originalURL;
+            if (!originalURL.startsWith("http://") && !originalURL.startsWith("https://")) {
+                // Add the http scheme if missing
+                updatedURL = "http://" + originalURL;
+            }
+            if (!originalURL.contains("www.")) {
+                // Add the www subdomain if missing
+                updatedURL = updatedURL.replaceFirst("http://", "http://www.");
+                updatedURL = updatedURL.replaceFirst("https://", "https://www.");
+            }
+            return new RedirectView(updatedURL);
+        }
 
-        return new RedirectView("https://"+originalURL);
-
+        return new RedirectView(originalURL);
     }
 
 
