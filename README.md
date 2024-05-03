@@ -1,5 +1,5 @@
 
-<img src="minuRL/src/assets/Minurl_logo.png" width="200" height="300"/>
+<img src="minuRL/src/assets/Minurl_logo.png" width="200" height="250"/>
 
 
 # MINU.RL 
