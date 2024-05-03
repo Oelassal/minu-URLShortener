@@ -20,10 +20,6 @@ public class URLValidator {
 
 //    Check for Scheme and subdomain in the original url
     public static boolean isSchemeSubdomain(String originalUrl) {
-    if (originalUrl.startsWith("http://") || originalUrl.startsWith("https://")) {
-        int wwwIndex = originalUrl.indexOf("www.");
-        return wwwIndex > 0;
-    }
-    return false;
+        return originalUrl.startsWith("http://www") || originalUrl.startsWith("https://") || originalUrl.startsWith("https://www.") || originalUrl.startsWith("http://www.");
     }
 }
