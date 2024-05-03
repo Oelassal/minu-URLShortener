@@ -2,7 +2,7 @@ package com.omarelassal.minu.controller;
 
 import com.omarelassal.minu.dto.UrlMapDto;
 import com.omarelassal.minu.service.UrlShortenService;
-import com.omarelassal.minu.utils.URLValidator;
+import com.omarelassal.minu.service.UrlValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +19,9 @@ public class UrlController {
 
     @Autowired
     private UrlShortenService urlShortenService;
+
+    @Autowired
+    private UrlValidationService urlValidationService;
 
 
 
@@ -44,22 +47,9 @@ public class UrlController {
             return new RedirectView("/errorPage"); // Redirect to a custom error page
         }
 
-        // Check if the scheme and subdomain are valid, and add them if missing
-        if (!URLValidator.isSchemeSubdomain(originalURL)) {
-            String updatedURL = originalURL;
-            if (!originalURL.startsWith("http://") && !originalURL.startsWith("https://")) {
-                // Add the http scheme if missing
-                updatedURL = "http://" + originalURL;
-            }
-            if (!originalURL.contains("www.")) {
-                // Add the www subdomain if missing
-                updatedURL = updatedURL.replaceFirst("http://", "http://www.");
-                updatedURL = updatedURL.replaceFirst("https://", "https://www.");
-            }
-            return new RedirectView(updatedURL);
-        }
+        String validatedURL = urlValidationService.validateAndModifyURL(originalURL);
 
-        return new RedirectView(originalURL);
+        return new RedirectView(validatedURL);
     }
 
 
