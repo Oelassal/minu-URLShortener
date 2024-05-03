@@ -1,3 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
 @import url(../node_modules/bootstrap-icons/font/bootstrap-icons.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+
+
+/*toastr*/
+.overlay-container{
+  max-height: 50vh;
+  position: fixed;
+  z-index:100;
+  top: 10px;
+  right: 10px;
+  left:10px;
+}
+.toast-success {
+  margin: 10px 0;
+  padding: 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text color */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Adjust font size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.toast-success .toast-message {
+  font-weight: 500; /* Make the message bold */
+}
+
+.toast-success .toast-close-button {
+  color: #fff; /* White close button color */
+}
+

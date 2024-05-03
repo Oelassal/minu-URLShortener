@@ -14,17 +14,18 @@
           <p class="text-light">Shorten URLs lightning fast. ⚡</p>
 
           <div class="input-group mb-3">
-            <input type="text" [(ngModel)]="originalURL" class="form-control text-dark" placeholder="Enter your URL here" aria-label="Enter URL here" aria-describedby="button-addon2">
+            <input type="text" required [(ngModel)]="originalURL" class="form-control text-dark" placeholder="Enter your URL here" aria-label="Enter URL here" aria-describedby="button-addon2">
             <button type="submit" (click)="shorten()" class="btn btn-dark minu-btn">Shorten</button>
           </div>
 
+          <p *ngIf="errorMessage" class="text-white text- bg-danger p-4 rounded-3">{{ errorMessage }}</p>
 
           <div [class]="'toast' + (isShortUrlRcvd ? ' show ' : '')" id="minu-toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
               <img src="assets/lightning.png" class="rounded lightning" alt="..." (click)="copyUrl()">
               <strong class="me-auto">URL is here!</strong>
               <small>copy to clipboard</small>
-              <button type="button" class="btn-clipboard" data-bs-dismiss="toast" aria-label="Copy">
+              <button type="button" class="btn-clipboard" (click)="copyUrl()" data-bs-dismiss="toast" aria-label="Copy">
                 <i class="bi bi-clipboard"></i>
               </button>
             </div>
@@ -32,10 +33,10 @@
               {{shortUrl}}
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
   </div>
+
+
 </section>

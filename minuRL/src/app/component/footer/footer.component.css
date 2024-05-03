@@ -1,0 +1,35 @@
+.minucopyright1 {
+  /* easy frontend variables */
+  --minu-theme-color: rgb(0, 20, 35);
+  --minu-theme-color-rgb: 13, 110, 253;
+  bottom: 0;
+  background-color: var(--minu-theme-color);
+  color: #fff;
+}
+
+.minucopyright1>div {
+  background-color: var(--minu-theme-color);
+  padding: 48px 0;
+}
+
+.minucopyright1-nav .nav-link {
+  color: #fff;
+}
+
+.minucopyright1-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.minucopyright1-social li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 6px 8px;
+}
+
+.minucopyright1-social li a {
+  color: #fff;
+}
+
+.minucopyright1-social li a:hover {
+  opacity: .8;
+}
