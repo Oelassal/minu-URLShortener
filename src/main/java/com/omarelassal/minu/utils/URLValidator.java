@@ -24,7 +24,6 @@ public class URLValidator {
     public static boolean isSchemeSubdomain(String originalUrl) {
         try {
 
-
                 URL url = new URL(originalUrl);
                 String protocol = url.getProtocol();
                 String host = url.getHost();

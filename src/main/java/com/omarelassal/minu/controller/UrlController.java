@@ -48,7 +48,7 @@ public class UrlController {
         if(isSchemeSubDomainValid)
             return new RedirectView(originalURL);
 
-        return new RedirectView("https://"+originalURL);
+        return new RedirectView("https://www."+originalURL);
 
     }
 
